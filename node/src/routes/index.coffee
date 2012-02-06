@@ -2,6 +2,6 @@
 
 # export hash of route handlers
 
-modules.exports = (app) ->
+module.exports = (app) ->
     
     files: new (require './files') app
