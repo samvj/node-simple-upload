@@ -1,3 +1,4 @@
+models = require '../../models'
 
 
 class FilesRouter
@@ -14,13 +15,20 @@ class FilesRouter
     # file list view
     
     list: (req, res) ->
+        
         res.render 'files/list'
     
     
     # file upload view
     
     upload: (req, res) ->
-        res.send 'lol'
+
+        
+        # save file to database
+        
+        models.file.create(req.files.upload)
+        
+        res.redirect '/file'
         
 
 

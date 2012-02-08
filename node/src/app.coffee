@@ -17,8 +17,6 @@ app.configure ->
     app.use express.bodyParser()
     app.use express.cookieParser()
     app.use express.methodOverride()
-    app.use express.session 
-        secret: 'litigance'
     app.use express.errorHandler
         dumpExceptions: true
         showStack: true

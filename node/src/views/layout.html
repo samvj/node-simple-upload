@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
         <title>node-simple-upload</title>
+        <link href="/public/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="/public/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/public/css/style.css" media="screen" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <div id="header">
-            <h1>node-simple-upload</h1>
-            <ul>
-                <li><a href="/file">Files</a></li>
-            </ul>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="/">node-simple-upload</a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li><a href="/file">Files</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="body">{{{ body }}}</div>
+        <div class="container">{{{ body }}}</div>
     </body>
 </html>
