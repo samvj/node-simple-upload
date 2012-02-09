@@ -16,3 +16,29 @@
         </form>
     </div>
 </div>
+<div class="row">
+    <div class="span12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Filename</th>
+                    <th>Content Type</th>
+                    <th>File Size</th>
+                    <th>Upload Date</th>
+                    <th>MD5</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#files}}
+                    <tr>
+                        <td>{{ filename }}</td>
+                        <td>{{ contentType }}</td>
+                        <td>{{ length }}</td>
+                        <td>{{ uploadDate }}</td>
+                        <td>{{ md5 }}</td>
+                    </tr>
+                {{/files}}
+            </tbody>
+        </table>
+    </div>
+</div>

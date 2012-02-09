@@ -4,4 +4,4 @@
 
 module.exports = (app) ->
     
-    files: new (require './files') app
+    files: new (require './files')(app)

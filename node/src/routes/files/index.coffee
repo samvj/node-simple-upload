@@ -16,7 +16,13 @@ class FilesRouter
     
     list: (req, res) ->
         
-        res.render 'files/list'
+        models.file.find {}, (err, values) ->
+
+            context =
+                locals:
+                    files: values
+            
+            res.render 'files/list', context
     
     
     # file upload view
