@@ -3,16 +3,16 @@ hogan   = require 'express-hogan.js'
 
 
 # initialize the application server
-
 app = module.exports = express.createServer()
 
 
-# configure the application server
-
+# configure template engine
 app.set 'view engine', 'html'
 app.set 'views', "#{ __dirname }/views"
 app.register '.html', hogan
 
+
+# configure the application server
 app.configure ->
     app.use express.bodyParser()
     app.use express.cookieParser()
@@ -23,11 +23,9 @@ app.configure ->
     app.use app.router
 
 
-# instantiate the request router
-
+# instantiate route handlers
 routes = (require './routes')(app)
 
 
 # listen for incoming requests
-
 app.listen '/tmp/node-simple-upload.sock'

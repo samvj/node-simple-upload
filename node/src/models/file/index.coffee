@@ -6,34 +6,36 @@ class FileModel
     constructor: (@db) ->
     
     
-    # find multiple files
-    
     find: (spec, callback) ->
         
-        collection = @db.collection 'files.files'
+        # work with the gridfs file collection
+        collection = @db.collection 'fs.files'
         
+        # query the collection for all of the files
         collection.find(spec).toArray (err, values) ->
             callback err, values
-    
-    
-    # save file to gridfs
-    
+
+
     create: (file) ->
         
+        # format the file properties
         spec =
             filename: file.name
             contentType: file.type
         
-        gridfs = @db.gridfs 'files'        
+        # create a gridfs file
+        gridfs = @db.gridfs()
         gridfs_file = gridfs.create spec
+        
+        # obtain gridfs write stream
         gridfs_stream = gridfs_file.writeStream()
         
-        # pipe local file to gridfs
-        
+        # read local tmp file into gridfs
         fs.createReadStream(file.path).pipe gridfs_stream
+        
+        # save changes to gridfs
         gridfs_file.save()
 
 
-# export router instance
-
+# export model class
 module.exports = FileModel

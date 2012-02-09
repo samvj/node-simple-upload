@@ -1,13 +1,10 @@
 mongolian = require 'mongolian'
 
 
-# define the database connection
+# instantiate the database connection
+database_connection = new mongolian 'mongo://localhost/node_simple_upload'
 
-database_connection = new mongolian 'mongo://localhost/litigance'
 
-
-# export the db object modules
-
+# export model instances
 module.exports =
-
     file: new (require './file')(database_connection)
