@@ -1,6 +1,6 @@
 # Overview
 
-Just a simple node.js application that demonstrates HTTP-based file uploads. The code is written in CoffeeScript. Files are stored using MongoDB's GridFS.
+Just a simple node.js application that demonstrates HTTP-based file uploads. The code is written in CoffeeScript. Files are stored using MongoDB's GridFS. I'm using Express.js, Hogan.js and Mongolian database lib.
 
 # Building
 
